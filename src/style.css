@@ -9,4 +9,11 @@ form {
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 10px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 150px;
+  }
 }

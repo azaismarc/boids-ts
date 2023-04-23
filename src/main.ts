@@ -13,7 +13,7 @@ const param: Param = {
 const background_color = 'black';
 
 const height = 600;
-const width = 1300;
+const width = innerWidth > 1300 ? 1300 : innerWidth - 20;
 
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 canvas.height = height;
