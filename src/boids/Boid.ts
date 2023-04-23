@@ -104,7 +104,7 @@ export default class Boid {
      * @param {Size} size - size of the canvas
      */
     private limit_position(size: Size): void {
-        const margin = 50;
+        const margin = 100;
         const turn = 1;
         let vx = this.velocity.x;
         let vy = this.velocity.y;
@@ -121,16 +121,24 @@ export default class Boid {
      * @param {CanvasRenderingContext2D} ctx - canvas context
      */
     draw(ctx: CanvasRenderingContext2D): void {
+        // Rotate the canvas to the direction of the boid
         ctx.translate(this.position.x, this.position.y);
         ctx.rotate(this.velocity.angle());
         ctx.translate(-this.position.x, -this.position.y);
+
+        // Draw the boid
         ctx.fillStyle = Boid.color;
         ctx.beginPath();
         ctx.moveTo(this.position.x, this.position.y);
         ctx.lineTo(this.position.x - 15, this.position.y + 5);
         ctx.lineTo(this.position.x - 15, this.position.y - 5);
         ctx.lineTo(this.position.x, this.position.y);
+        ctx.closePath();
         ctx.fill();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+        // Restore the canvas
+        ctx.translate(this.position.x, this.position.y);
+        ctx.rotate(-this.velocity.angle());
+        ctx.translate(-this.position.x, -this.position.y);
     }
 }
