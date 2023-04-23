@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flocking</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
+      <form>
+        <div>
+          <label for="cohesion">Cohesion</label>
+          <input type="range" id="cohesion"/>
+        </div>
+        <div>
+          <label for="separation">Separation</label>
+          <input type="range" id="separation"/>
+        </div>
+        <div>
+          <label for="alignment">Alignment</label>
+          <input type="range" id="alignment"/>
+        </div>
+        <div>
+          <label for="speed">Speed</label>
+          <input type="range" id="speed"/>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
