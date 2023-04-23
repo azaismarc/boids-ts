@@ -9,9 +9,14 @@ form {
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 10px;
+}
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
+
+  form {
     flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10px;
     flex-wrap: wrap;
     align-items: center;
     height: 150px;
